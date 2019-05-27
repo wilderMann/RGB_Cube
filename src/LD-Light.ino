@@ -63,6 +63,19 @@ void setup() {
         homieCTRL.setDevice(homieDevice);
 
         pubTimer.start();
+        colorPoint rot = colorPoint((uint8_t)255,(uint8_t)0,(uint8_t)0);
+        colorPoint gruen = colorPoint((uint8_t)0,(uint8_t)255,(uint8_t)0);
+        colorPoint blau = colorPoint((uint8_t)0,(uint8_t)0,(uint8_t)255);
+        colorPoint off = colorPoint((uint8_t)0,(uint8_t)0,(uint8_t)0);
+        colorChange::setColor(strip,off);
+        colorChange::setBrightness(strip, 255);
+        colorChange::setColor(strip,rot);
+        delay(500);
+        colorChange::setColor(strip,gruen);
+        delay(500);
+        colorChange::setColor(strip,blau);
+        delay(500);
+        colorChange::setColor(strip,off);
 }
 
 void loop() {
